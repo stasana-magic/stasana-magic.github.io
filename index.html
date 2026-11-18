@@ -2,323 +2,269 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#100d19">
-<meta name="description" content="Школа практической магии Стасаны. Таро, ритуалы, намерения и внутренняя опора. Познакомься с бесплатными мастер-классами.">
-<title>Школа практической магии Стасаны</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0a0806">
+<meta name="description" content="Школа магии Стасаны. Таро, руны, свечная магия, диагностика дара и ритуалы. 18+">
+<title>Стасана · Школа магии</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div id="app">
 
-<header class="header">
-  <div class="wrap header-inner">
-    <a href="#top" class="brand" aria-label="Стасана — главная">
-      <span class="brand-mark">☽</span>
-      <div>
-        <span class="brand-name">СТАСАНЫ</span>
-        <small>ШКОЛА ПРАКТИЧЕСКОЙ МАГИИ</small>
-      </div>
+<!-- ДВЕРИ: открываются сами при загрузке -->
+<div class="doors" id="doors" aria-hidden="true">
+  <div class="door door-left">
+    <div class="door-ornament">
+      <svg viewBox="0 0 100 300" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 20 L80 50 L80 250 L50 280 L20 250 L20 50 Z" fill="none" stroke="#C9A24A" stroke-width="1.2"/>
+        <circle cx="50" cy="90" r="18" fill="none" stroke="#C9A24A" stroke-width="1"/>
+        <path d="M50 75 L65 90 L50 105 L35 90 Z" fill="none" stroke="#C9A24A" stroke-width="0.8"/>
+        <circle cx="50" cy="90" r="4" fill="#C9A24A"/>
+        <line x1="50" y1="130" x2="50" y2="230" stroke="#C9A24A" stroke-width="0.8"/>
+        <circle cx="50" cy="150" r="3" fill="#C9A24A"/>
+        <circle cx="50" cy="180" r="3" fill="#C9A24A"/>
+        <circle cx="50" cy="210" r="3" fill="#C9A24A"/>
+      </svg>
+    </div>
+    <div class="door-handle"></div>
+  </div>
+  <div class="door door-right">
+    <div class="door-ornament">
+      <svg viewBox="0 0 100 300" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 20 L80 50 L80 250 L50 280 L20 250 L20 50 Z" fill="none" stroke="#C9A24A" stroke-width="1.2"/>
+        <circle cx="50" cy="90" r="18" fill="none" stroke="#C9A24A" stroke-width="1"/>
+        <path d="M50 75 L65 90 L50 105 L35 90 Z" fill="none" stroke="#C9A24A" stroke-width="0.8"/>
+        <circle cx="50" cy="90" r="4" fill="#C9A24A"/>
+        <line x1="50" y1="130" x2="50" y2="230" stroke="#C9A24A" stroke-width="0.8"/>
+        <circle cx="50" cy="150" r="3" fill="#C9A24A"/>
+        <circle cx="50" cy="180" r="3" fill="#C9A24A"/>
+        <circle cx="50" cy="210" r="3" fill="#C9A24A"/>
+      </svg>
+    </div>
+    <div class="door-handle"></div>
+  </div>
+</div>
+
+<!-- ВЕРХНЯЯ НАВИГАЦИЯ (sticky) -->
+<header class="header" id="header">
+  <div class="header-inner">
+    <a href="#top" class="brand">
+      <span class="brand-flame">🕯</span>
+      <span class="brand-name">СТАСАНА</span>
     </a>
-    <nav class="nav" id="navigation" aria-label="Основная навигация">
-      <a href="#top" class="active" aria-current="page">Главная</a>
+    <nav class="nav" id="nav">
       <a href="#free">Бесплатно</a>
       <a href="#courses">Курсы</a>
-      <a href="#consultation">Консультация</a>
-      <a href="#reviews">Отзывы</a>
+      <a href="#consult">Консультация</a>
+      <a href="#about">О Стасане</a>
       <a href="#contacts">Контакты</a>
     </nav>
-    <button class="login" data-demo="Личный кабинет">Войти ↗</button>
-    <button class="menu" aria-label="Открыть меню" aria-expanded="false" aria-controls="navigation">☰</button>
+    <a href="https://t.me/" target="_blank" rel="noopener" class="btn btn-free-top" id="free-top">Начни бесплатно →</a>
+    <button class="burger" id="burger" aria-label="Меню" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 
-<main class="wrap" id="top">
+<main id="top">
 
+<!-- HERO: фото костра + имя + боковые CTA -->
 <section class="hero">
-  <div class="hero-copy">
-    <span class="eyebrow">✧ Школа практической магии Стасаны</span>
-    <h1>Магия начинается<br>с <em>тебя.</em></h1>
-    <p>Открой свою интуицию. Почувствуй внутреннюю силу.<br>Создай жизнь, в которой есть место чуду.</p>
-    <div class="actions">
-      <a class="btn" href="#free">Попробовать бесплатно ↗</a>
-      <a class="btn ghost" href="#courses">Выбрать курс</a>
-    </div>
-    <p class="micro"><span>✦</span> Бережно. Осознанно. В твоём ритме.</p>
+  <div class="hero-bg">
+    <img src="assets/stasana-fire-hero.jpg" alt="" class="hero-img">
+    <div class="hero-vignette"></div>
   </div>
-  <div class="founder-hero">
-    <div class="founder-frame">
-      <img src="assets/stasana-portrait.jpg" alt="Стасана — основательница школы практической магии" width="1320" height="1295" fetchpriority="high">
-      <div class="founder-caption">
-        <span>ТВОЯ НАСТАВНИЦА</span>
-        <strong>Стасана</strong>
+  <div class="hero-content">
+    <div class="hero-text">
+      <span class="hero-eyebrow">· Школа магии ·</span>
+      <h1 class="hero-title">СТАСАНА</h1>
+      <p class="hero-sub">Таро · Руны · Свечная магия · Диагностика</p>
+      <span class="hero-age">18+</span>
+    </div>
+    <aside class="side-cta" aria-label="Быстрые действия">
+      <a href="https://t.me/" target="_blank" rel="noopener" class="cta cta-gift">
+        <span class="cta-icon">🎁</span>
+        <span class="cta-label">Забрать подарок</span>
+      </a>
+      <a href="https://t.me/" target="_blank" rel="noopener" class="cta cta-diag">
+        <span class="cta-icon">🔮</span>
+        <span class="cta-label">Диагностика дара</span>
+      </a>
+      <a href="https://t.me/" target="_blank" rel="noopener" class="cta cta-razbor">
+        <span class="cta-icon">🕯</span>
+        <span class="cta-label">Записаться на разбор</span>
+      </a>
+      <a href="https://t.me/" target="_blank" rel="noopener" class="cta cta-neg">
+        <span class="cta-icon">🛡</span>
+        <span class="cta-label">Диагностика негатива</span>
+      </a>
+    </aside>
+  </div>
+</section>
+
+<!-- БЕСПЛАТНО -->
+<section class="section section-free" id="free">
+  <div class="wrap">
+    <span class="eyebrow">· Для начала ·</span>
+    <h2 class="h2">Начни <em>бесплатно</em></h2>
+    <p class="section-sub">Присоединяйся к Telegram-каналу — в закрепе бесплатный мини-курс, еженедельные практики и анонсы эфиров.</p>
+    <div class="free-card">
+      <div class="free-card-inner">
+        <div class="free-icon">🕯</div>
+        <h3>Бесплатный мини-курс</h3>
+        <p>Основы работы с намерением, базовые практики защиты и очищения</p>
+        <a href="https://t.me/" target="_blank" rel="noopener" class="btn btn-big">Забрать в Telegram →</a>
       </div>
     </div>
-    <span class="founder-star" aria-hidden="true">✧</span>
-    <span class="founder-orbit" aria-hidden="true"></span>
   </div>
 </section>
 
-<div class="trust">
-  <div><span>✧</span> Практики для реальной жизни</div>
-  <div><span>☾</span> От первых шагов к глубине</div>
-  <div><span>♡</span> Пространство без осуждения</div>
-</div>
-
-<section class="section" id="directions">
-  <div class="section-head">
-    <div>
-      <span class="eyebrow">Найди свой путь</span>
-      <h2>К чему тебя <em>тянет?</em></h2>
+<!-- ПЛАТНЫЕ КУРСЫ -->
+<section class="section section-courses" id="courses">
+  <div class="wrap">
+    <span class="eyebrow">· Обучение ·</span>
+    <h2 class="h2">Платные <em>курсы</em></h2>
+    <p class="section-sub">После оплаты на вашу почту/Telegram приходит персональная ссылка-приглашение в закрытый канал курса.</p>
+    <div class="courses-grid">
+      <article class="course">
+        <div class="course-art" data-course="candle">
+          <span class="course-glyph">🕯</span>
+        </div>
+        <h3 class="course-title">Свечная магия: основы</h3>
+        <p class="course-desc">Как создавать свечи с намерением, ритуалы очищения и защиты, работа с воском</p>
+        <div class="course-foot">
+          <span class="course-price">50 ₽ <small>/ 30 ₴</small></span>
+          <button class="btn btn-buy" data-product="course_candle" data-name="Свечная магия: основы" data-price="50 ₽ / 30 ₴">Купить</button>
+        </div>
+      </article>
+      <article class="course">
+        <div class="course-art" data-course="runes">
+          <span class="course-glyph">ᚱ</span>
+        </div>
+        <h3 class="course-title">Руны: практический курс</h3>
+        <p class="course-desc">Значения рун старшего Футарка, расклады, применение рунической магии в быту</p>
+        <div class="course-foot">
+          <span class="course-price">50 ₽ <small>/ 30 ₴</small></span>
+          <button class="btn btn-buy" data-product="course_runes" data-name="Руны: практический курс" data-price="50 ₽ / 30 ₴">Купить</button>
+        </div>
+      </article>
+      <article class="course">
+        <div class="course-art" data-course="tarot">
+          <span class="course-glyph">☽</span>
+        </div>
+        <h3 class="course-title">Таро для начинающих</h3>
+        <p class="course-desc">Старшие арканы, базовые расклады, как читать карты для себя и близких</p>
+        <div class="course-foot">
+          <span class="course-price">50 ₽ <small>/ 30 ₴</small></span>
+          <button class="btn btn-buy" data-product="course_tarot" data-name="Таро для начинающих" data-price="50 ₽ / 30 ₴">Купить</button>
+        </div>
+      </article>
     </div>
-  </div>
-  <div class="directions">
-    <a class="direction" href="#courses"><b>☾</b><h3>Таро</h3><p>Мудрость символов и голос интуиции</p><span class="arr">↗</span></a>
-    <a class="direction" href="#courses"><b>♜</b><h3>Ритуалы</h3><p>Маленькие действия с большим смыслом</p><span class="arr">↗</span></a>
-    <a class="direction" href="#courses"><b>✧</b><h3>Манифестация</h3><p>От желания — к ясному намерению</p><span class="arr">↗</span></a>
-    <a class="direction" href="#courses"><b>◇</b><h3>Защита</h3><p>Твои границы и внутренняя опора</p><span class="arr">↗</span></a>
   </div>
 </section>
 
-<section class="section" id="free" style="padding-top:15px">
-  <div class="section-head">
-    <div>
-      <span class="eyebrow">Первый шаг — в подарок</span>
-      <h2>Просто <em>попробуй</em></h2>
-    </div>
-  </div>
-  <div class="grid">
-    <article class="card">
-      <a href="#free" aria-label="Смотреть: Твоя первая лунная практика">
-        <div class="art art-tarot" aria-hidden="true"><span class="badge">Бесплатно</span><span class="glyph">☽</span><small>СТАСАНА · ПРАКТИЧЕСКАЯ МАГИЯ</small></div>
-      </a>
-      <div class="card-body">
-        <span class="meta">Видеоурок · 32 мин</span>
-        <h3>Твоя первая лунная практика</h3>
-        <div class="card-bottom">
-          <span class="note">Начни знакомство с магией</span>
-          <a href="#" class="text-link" data-demo="Мастер-класс «Твоя первая лунная практика»">Смотреть ▷</a>
+<!-- КОНСУЛЬТАЦИЯ -->
+<section class="section section-consult" id="consult">
+  <div class="wrap">
+    <div class="consult-card">
+      <div class="consult-photo">
+        <img src="assets/stasana-portrait.png" alt="Стасана">
+      </div>
+      <div class="consult-body">
+        <span class="eyebrow">· Лично ·</span>
+        <h2 class="h2">Консультация <em>30 минут</em></h2>
+        <p>Личный разбор вашего запроса. Диагностика ситуации, ответы на вопросы, рекомендации по практикам.</p>
+        <div class="consult-foot">
+          <span class="course-price">50 ₽ <small>/ 30 ₴</small></span>
+          <button class="btn btn-buy btn-big" data-product="consult_30" data-name="Консультация 30 минут" data-price="50 ₽ / 30 ₴">Записаться</button>
         </div>
       </div>
-    </article>
-    <article class="card">
-      <a href="#free" aria-label="Смотреть: Таро: знакомство с собой">
-        <div class="art art-rituals" aria-hidden="true"><span class="badge">Бесплатно</span><span class="glyph">☀</span><small>СТАСАНА · ПРАКТИЧЕСКАЯ МАГИЯ</small></div>
-      </a>
-      <div class="card-body">
-        <span class="meta">Видеоурок · 45 мин</span>
-        <h3>Таро: знакомство с собой</h3>
-        <div class="card-bottom">
-          <span class="note">Начни знакомство с магией</span>
-          <a href="#" class="text-link" data-demo="Мастер-класс «Таро: знакомство с собой»">Смотреть ▷</a>
-        </div>
-      </div>
-    </article>
-    <article class="card">
-      <a href="#free" aria-label="Смотреть: Сила твоего намерения">
-        <div class="art art-manifest" aria-hidden="true"><span class="badge">Бесплатно</span><span class="glyph">✧</span><small>СТАСАНА · ПРАКТИЧЕСКАЯ МАГИЯ</small></div>
-      </a>
-      <div class="card-body">
-        <span class="meta">Видеоурок · 28 мин</span>
-        <h3>Сила твоего намерения</h3>
-        <div class="card-bottom">
-          <span class="note">Начни знакомство с магией</span>
-          <a href="#" class="text-link" data-demo="Мастер-класс «Сила твоего намерения»">Смотреть ▷</a>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section class="section mentor" id="mentor">
-  <div class="portrait">
-    <img src="assets/stasana-practice.jpg" alt="Стасана за практикой со свечами и травами" width="896" height="1152" loading="lazy">
-  </div>
-  <div>
-    <span class="eyebrow">Твой проводник в мир практик</span>
-    <h2>Не стать кем-то.<br><em>Вспомнить себя.</em></h2>
-    <p>Я Стасана, основательница школы практической магии. Для меня магия — это искусство быть внимательной к себе, замечать символы и находить смысл в повседневном.</p>
-    <p>Я создала эту школу как место, где можно задавать любые вопросы, пробовать новое и двигаться без спешки. Здесь не нужно быть «особенной». Достаточно быть собой.</p>
-    <div class="stats">
-      <div><strong>8 лет</strong><small>личной практики</small></div>
-      <div><strong>1 200+</strong><small>учениц в сообществе</small></div>
-    </div>
-    <span class="note">Текст знакомства и цифры — примеры для макета; фотографии предоставлены владелицей школы.</span>
-  </div>
-</section>
-
-<section class="section" id="courses">
-  <div class="section-head">
-    <div>
-      <span class="eyebrow">Для тех, кто готов идти глубже</span>
-      <h2>Твоё новое <em>знание</em></h2>
-    </div>
-  </div>
-  <div class="grid">
-    <article class="card" data-category="Таро">
-      <a href="#courses" aria-label="Подробнее: Таро. Язык интуиции">
-        <div class="art art-tarot" aria-hidden="true"><span class="badge">Бестселлер</span><span class="glyph">☾</span><small>СТАСАНА · ПРАКТИЧЕСКАЯ МАГИЯ</small></div>
-      </a>
-      <div class="card-body">
-        <span class="meta">Таро · 24 урока</span>
-        <h3>Таро. Язык интуиции</h3>
-        <p>Научись слышать себя через символы и читать карты уверенно.</p>
-        <div class="card-bottom">
-          <span class="price">149 €</span>
-          <button class="btn ghost small-btn" data-demo="Купить курс «Таро. Язык интуиции»">Купить ↗</button>
-        </div>
-      </div>
-    </article>
-    <article class="card" data-category="Ритуалы">
-      <a href="#courses" aria-label="Подробнее: Магия повседневности">
-        <div class="art art-rituals" aria-hidden="true"><span class="badge">Для начинающих</span><span class="glyph">♜</span><small>СТАСАНА · ПРАКТИЧЕСКАЯ МАГИЯ</small></div>
-      </a>
-      <div class="card-body">
-        <span class="meta">Ритуалы · 18 уроков</span>
-        <h3>Магия повседневности</h3>
-        <p>Создай свои ритуалы внимания, спокойствия и внутренней опоры.</p>
-        <div class="card-bottom">
-          <span class="price">119 €</span>
-          <button class="btn ghost small-btn" data-demo="Купить курс «Магия повседневности»">Купить ↗</button>
-        </div>
-      </div>
-    </article>
-    <article class="card" data-category="Манифестация">
-      <a href="#courses" aria-label="Подробнее: Искусство намерения">
-        <div class="art art-manifest" aria-hidden="true"><span class="badge">Новый курс</span><span class="glyph">✧</span><small>СТАСАНА · ПРАКТИЧЕСКАЯ МАГИЯ</small></div>
-      </a>
-      <div class="card-body">
-        <span class="meta">Манифестация · 16 уроков</span>
-        <h3>Искусство намерения</h3>
-        <p>Преврати желания в ясные намерения и маленькие реальные шаги.</p>
-        <div class="card-bottom">
-          <span class="price">99 €</span>
-          <button class="btn ghost small-btn" data-demo="Купить курс «Искусство намерения»">Купить ↗</button>
-        </div>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section class="section" id="reviews">
-  <div class="section-head">
-    <div>
-      <span class="eyebrow">Тёплые слова</span>
-      <h2>Истории <em>из нашего круга</em></h2>
-    </div>
-  </div>
-  <div class="quote-panel">
-    <div class="quote-mark">“</div>
-    <div id="quote-content"></div>
-    <div class="slider-controls">
-      <button class="round" id="prev-review" aria-label="Предыдущий отзыв">←</button>
-      <span class="note" id="review-count"></span>
-      <button class="round" id="next-review" aria-label="Следующий отзыв">→</button>
-    </div>
-    <div class="note" style="margin-top:12px">Примеры отзывов для макета</div>
-  </div>
-</section>
-
-<section class="section" id="consultation" style="padding-top:10px">
-  <div class="banner consultation-banner">
-    <img class="consultation-photo" src="assets/stasana-fire.jpg" alt="Стасана у костра в лесу" width="896" height="1152" loading="lazy">
-    <div class="consultation-copy">
-      <span class="eyebrow">Пространство только для тебя</span>
-      <h2>Поговорим о <em>важном?</em></h2>
-      <p>Индивидуальная встреча, чтобы услышать себя, посмотреть на ситуацию с другой стороны и найти свою точку опоры.</p>
-    </div>
-    <button class="btn ghost" data-demo="Запись на консультацию">Записаться на консультацию ↗</button>
-  </div>
-</section>
-
-<section class="section app-block" id="app-pocket">
-  <div>
-    <div class="phone" aria-label="Макет приложения Карманная ведьма">
-      <span class="meta">Стасана</span>
-      <div class="moon"></div>
-      <h3>Карманная ведьма</h3>
-      <p>Твоя магия всегда рядом</p>
-      <div class="phone-line">☾ Лунный календарь</div>
-      <div class="phone-line">✧ Практика дня</div>
-    </div>
-  </div>
-  <div>
-    <span class="eyebrow">Скоро · Твоя маленькая вселенная</span>
-    <h2>«Карманная <em>ведьма»</em></h2>
-    <p>Лунный календарь, любимые практики и дневник намерений — в одном приложении. Оставь email, чтобы узнать о запуске первой.</p>
-    <form class="email-form" data-form="newsletter">
-      <input type="email" name="email" aria-label="Email для уведомления" placeholder="Твой email" required>
-      <button class="btn">Узнать первой ↗</button>
-    </form>
-    <span class="note">Демо-подписка. Email пока не сохраняется.</span>
-    <div class="stores">
-      <span>Скоро в App Store</span>
-      <span>Скоро в Google Play</span>
     </div>
   </div>
 </section>
 
-<section class="section faq" id="faq">
-  <span class="eyebrow" style="text-align:center">Если остались вопросы</span>
-  <h2>Давай <em>разберёмся</em></h2>
-  <details><summary>Подойдёт ли школа, если я совсем новичок?</summary><p>Да. Начни с бесплатного мастер-класса, чтобы познакомиться с подходом. Базовые курсы не требуют предварительной подготовки: всё объясняем шаг за шагом.</p></details>
-  <details><summary>Как проходит обучение?</summary><p>В концепции школы — короткие видеоуроки, конспекты и самостоятельные задания. Ты выбираешь свой темп. Состав поддержки зависит от выбранного тарифа.</p></details>
-  <details><summary>Нужны ли специальные инструменты?</summary><p>Для большинства практик достаточно блокнота и тихого места. Для курса Таро понадобится колода. Полный список материалов предусмотрен в первом модуле.</p></details>
-  <details><summary>На какой срок открывается доступ?</summary><p>В демонстрационных тарифах указан доступ на 6 или 12 месяцев. Окончательные условия будут опубликованы перед началом продаж.</p></details>
-  <details><summary>Можно ли оплатить курс частями?</summary><p>Варианты оплаты будут доступны после запуска. Сейчас сайт работает в демонстрационном режиме: кнопки покупки не списывают деньги.</p></details>
+<!-- О СТАСАНЕ -->
+<section class="section section-about" id="about">
+  <div class="wrap about-grid">
+    <div class="about-photo">
+      <img src="assets/stasana-candle-ritual.jpg" alt="Стасана за работой со свечами">
+    </div>
+    <div class="about-text">
+      <span class="eyebrow">· О наставнице ·</span>
+      <h2 class="h2">Стасана</h2>
+      <p>Практик, таролог, рунолог. Специализируюсь на диагностике дара, снятии негатива и обучении практической магии.</p>
+      <p>Школа — это пространство для тех, кто готов работать с собой осознанно. Без обещаний «всё решится за один ритуал». С реальными практиками и честным разбором.</p>
+    </div>
+  </div>
 </section>
 
-</main>
+<!-- ОТЗЫВЫ -->
+<section class="section section-reviews" id="reviews">
+  <div class="wrap">
+    <span class="eyebrow">· Отзывы ·</span>
+    <h2 class="h2">Что <em>говорят</em></h2>
+    <div class="reviews-placeholder">
+      <p>Отзывы учениц появятся здесь</p>
+    </div>
+  </div>
+</section>
 
+<!-- ФУТЕР -->
 <footer class="footer" id="contacts">
   <div class="wrap">
     <div class="footer-top">
-      <div>
-        <a href="#top" class="brand">
-          <span class="brand-mark">☽</span>
-          <div>
-            <span class="brand-name">СТАСАНЫ</span>
-            <small>ШКОЛА ПРАКТИЧЕСКОЙ МАГИИ</small>
-          </div>
-        </a>
-        <p class="note" style="margin-top:17px">Твоя магия. Твой путь. Твои правила.</p>
+      <div class="footer-brand">
+        <span class="brand-flame">🕯</span>
+        <span class="brand-name">СТАСАНА</span>
+        <p class="footer-tag">Школа магии · 18+</p>
       </div>
       <div class="footer-links">
-        <div>
-          <strong>Твой путь</strong>
-          <a href="#free">Бесплатные практики</a>
-          <a href="#courses">Все курсы</a>
-          <a href="#consultation">Консультации</a>
-        </div>
-        <div>
-          <strong>Будем ближе</strong>
-          <a href="#" data-demo="Instagram школы">Instagram ↗</a>
-          <a href="#" data-demo="Telegram школы">Telegram ↗</a>
-          <a href="#" data-demo="Контакты школы">Контакты</a>
-        </div>
+        <a href="https://t.me/" target="_blank" rel="noopener" class="social">
+          <span class="social-icon">✈</span> Telegram
+        </a>
+        <a href="https://instagram.com/" target="_blank" rel="noopener" class="social">
+          <span class="social-icon">◉</span> Instagram
+        </a>
+        <a href="tel:+00000000000" class="social">
+          <span class="social-icon">☎</span> +00 000 000 00
+        </a>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>© 2026 Стасана · Демонстрационный сайт школы</span>
-      <div>
-        <a href="#" data-demo="Политика конфиденциальности">Конфиденциальность</a>
-        <a href="#" data-demo="Публичная оферта">Оферта</a>
+      <span>© 2026 Стасана</span>
+      <div class="footer-legal">
+        <a href="privacy.html">Политика конфиденциальности</a>
+        <a href="offer.html">Публичная оферта</a>
       </div>
     </div>
   </div>
 </footer>
 
-<button class="mobile-telegram" data-demo="Telegram школы">↗ Написать в Telegram</button>
-
-<dialog class="modal" id="modal">
-  <button class="modal-close" aria-label="Закрыть">×</button>
-  <span class="eyebrow">Стасана · Скоро</span>
-  <h3 id="modal-title"></h3>
-  <p id="modal-text"></p>
-  <button class="btn" id="modal-ok">Понятно</button>
-</dialog>
-
+<!-- МОДАЛКА ПОКУПКИ -->
+<div class="modal" id="modal" aria-hidden="true">
+  <div class="modal-backdrop"></div>
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <button class="modal-close" id="modal-close" aria-label="Закрыть">×</button>
+    <span class="eyebrow">· Оплата ·</span>
+    <h3 id="modal-title">Купить</h3>
+    <p class="modal-price" id="modal-price"></p>
+    <form class="modal-form" id="buy-form">
+      <label>
+        <span>Ваше имя</span>
+        <input type="text" name="name" required placeholder="Как к вам обращаться">
+      </label>
+      <label>
+        <span>Telegram или e-mail</span>
+        <input type="text" name="contact" required placeholder="@username или email">
+      </label>
+      <button type="submit" class="btn btn-big">Перейти к оплате →</button>
+      <p class="modal-note">После оплаты вы получите ссылку-приглашение. Нажимая «Перейти к оплате», вы соглашаетесь с <a href="offer.html">офертой</a> и <a href="privacy.html">политикой конфиденциальности</a>. 18+</p>
+    </form>
+  </div>
 </div>
+
 <script src="app.js" defer></script>
 </body>
 </html>
